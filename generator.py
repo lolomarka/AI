@@ -2,16 +2,22 @@ import tensorflow as tf
 import const
 import time
 
+
+# загружаем натренированную модель
 one_step_model = tf.saved_model.load(const.save_dir)
 
 start = time.time()
 states = None
+
+# начальное состояние текста
 next_char = tf.constant(['#include'])
 result = [next_char]
 
+# генерация 1000 символов текста
 for n in range(1000):
-  next_char, states = one_step_model.generate_one_step(next_char, states=states)
-  result.append(next_char)
+    next_char, states = one_step_model.generate_one_step(
+        next_char, states=states)
+    result.append(next_char)
 
 result = tf.strings.join(result)
 end = time.time()

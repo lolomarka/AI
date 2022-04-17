@@ -1,9 +1,14 @@
 # Путь к датасету
 train_data_file = 'data.txt'
 
+# длина последовательности
 seq_length = 100
+
 BATCH_SIZE = 64
+
 BUFFER_SIZE = 10000
+
+# кол-во эпох тренировки
 epochs = 30
 
 # The embedding dimension
