@@ -10,7 +10,7 @@ start = time.time()
 states = None
 
 # начальное состояние текста
-next_char = tf.constant(['#include'])
+next_char = tf.constant(['fn '])
 result = [next_char]
 
 # генерация 1000 символов текста
