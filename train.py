@@ -76,7 +76,7 @@ class OneStep(tf.keras.Model):
 
 # читаем данные из файла
 data_path = os.path.join(os.curdir, const.train_data_file)
-text = open(data_path, 'rb').read().decode(encoding='utf-8')
+text = open(data_path, 'rb').read().decode(encoding='utf-8')[:200000]
 
 # создаем словарь символов
 vocab = sorted(set(text))
